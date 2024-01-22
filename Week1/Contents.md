@@ -40,3 +40,8 @@ docker run -it \
     --db=ny_taxi \
     --table_name=yellow_taxi_trips \
     --url=${URL}
+
+  # Docker compose
+
+  docker-compose up
+  docker-compose down
