@@ -13,6 +13,7 @@ Week1/*/keys/*
 # .tfstate files
 *.tfstate
 *.tfstate.*
+*lock.hcl
 
 # Crash log files
 crash.log
