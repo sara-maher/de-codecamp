@@ -1,0 +1,35 @@
+A1. --rm 
+A2. 0.42.0
+A3. 15612
+    select lpep_pickup_datetime 
+    from green_taxi_trips 
+    where date_trunc('day', lpep_pickup_datetime) = timestamp '2019-09-18'
+    and date_trunc('day', lpep_dropoff_datetime) = timestamp '2019-09-18'
+A4. 2019-09-26
+    SELECT lpep_pickup_datetime
+    FROM green_taxi_trips
+    ORDER BY trip_distance DESC
+    LIMIT 1;
+A5. "Brooklyn" "Manhattan" "Queens"
+    select z."Borough", sum(g.total_amount)
+    from green_taxi_trips g
+	inner join green_zones z on z."LocationID" = g."PULocationID"
+    where date_trunc('day', lpep_pickup_datetime) = timestamp '2019-09-18'
+	group by z."Borough"
+	order by sum(g.total_amount) desc
+A6. "Long Island City/Queens Plaza"
+    select zdo."Zone", sum(tip_amount)
+    from green_taxi_trips g
+	inner join green_zones zpu on zpu."LocationID" = g."PULocationID"
+	inner join green_zones zdo on zdo."LocationID" = g."DOLocationID"
+    where date_trunc('day', lpep_pickup_datetime)  >= timestamp '2019-09-01'
+	and date_trunc('day', lpep_pickup_datetime) < timestamp '2019-10-01'
+	and zpu."Zone" = 'Astoria'
+	group by zdo."Zone"
+	order by sum(tip_amount) desc
+A7.
+
+"Central Park"	57.92
+"Jamaica"	26.380000000000003
+"JFK Airport"	277.26
+"Long Island City/Queens Plaza"	709.0299999999997
