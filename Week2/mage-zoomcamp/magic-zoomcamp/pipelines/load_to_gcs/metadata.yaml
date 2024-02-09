@@ -80,7 +80,7 @@ executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: idyllic rogue
+name: load_to_gcs
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -90,7 +90,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-02-09 14:49:37'
-uuid: idyllic_rogue
+updated_at: '2024-02-09T14:49:37+00:00'
+uuid: load_to_gcs
 variables_dir: /home/src/mage_data/magic-zoomcamp
 widgets: []
