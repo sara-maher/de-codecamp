@@ -1,0 +1,5 @@
+A1. 840,402
+A2. 0 MB for the External Table and 6.41MB for the Materialized Table
+A3. 1622
+A4. Partition by lpep_pickup_datetime Cluster on PUlocationID
+A5. 
