@@ -42,3 +42,13 @@ ALTER TABLE `thinking-land-410514.trips_data_all.green_tripdata`
   RENAME COLUMN pickup_location_id TO PULocationID;
 ALTER TABLE `thinking-land-410514.trips_data_all.green_tripdata`
   RENAME COLUMN dropoff_location_id TO DOLocationID;
+
+CREATE OR REPLACE EXTERNAL TABLE `thinking-land-410514.trips_data_all.external_fhv_tripdata` 
+OPTIONS (
+  format = 'PARQUET',
+  uris = ['gs://mage-zoomcamp-thinking-land/fhv/fhv_tripdata_2019-*.parquet']
+);
+
+CREATE OR REPLACE TABLE thinking-land-410514.trips_data_all.fhv_tripdata AS
+SELECT *	
+FROM thinking-land-410514.trips_data_all.external_fhv_tripdata
